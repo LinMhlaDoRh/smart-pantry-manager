@@ -1,0 +1,35 @@
+package com.example.smartpantry;
+
+public class Ingredient {
+    private long id;
+    private final String name;
+    private final double quantity;
+    private final String unit;
+
+    public Ingredient(long id, String name, double quantity, String unit) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.unit = unit;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+}
