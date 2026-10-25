@@ -6,6 +6,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPantry">
+        <activity android:name=".RecipesActivity" android:exported="false" />
         <activity android:name=".IngredientActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
         <activity android:name=".PantryActivity" android:exported="true">
             <intent-filter>
