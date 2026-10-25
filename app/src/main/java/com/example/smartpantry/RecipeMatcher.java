@@ -88,7 +88,7 @@ public class RecipeMatcher {
                     available += baseQuantity(ingredient);
                 }
             }
-            if (available + 0.0000001 < needed) {
+            if (available < needed) {
                 return false;
             }
         }

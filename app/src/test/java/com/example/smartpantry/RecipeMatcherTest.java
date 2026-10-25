@@ -81,4 +81,14 @@ public class RecipeMatcherTest {
     public void unrelatedIngredientsDoNotBlockAMatch() {
         assertTrue(RecipeMatcher.matches(recipe(ingredient("egg", 2, "pcs")), Arrays.asList(ingredient("egg", 3, "pcs"), ingredient("rice", 100, "g"))));
     }
+
+    @Test
+    public void evenASmallQuantityShortageIsExcluded() {
+        assertFalse(RecipeMatcher.matches(recipe(ingredient("milk", 250, "ml")), Collections.singletonList(ingredient("milk", 249.99999999, "ml"))));
+    }
+
+    @Test
+    public void cookedBeansPluralMatchesTheSeededIngredient() {
+        assertTrue(RecipeMatcher.matches(recipe(ingredient("cooked bean", 250, "g")), Collections.singletonList(ingredient(" Cooked Beans ", 0.25, "kg"))));
+    }
 }
