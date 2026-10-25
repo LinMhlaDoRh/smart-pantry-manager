@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.SmartPantry" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#245C42</item>
+        <item name="colorPrimaryDark">#183E2E</item>
+        <item name="colorAccent">#245C42</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#F6F8F3</item>
+        <item name="android:navigationBarColor">#F6F8F3</item>
+        <item name="android:windowBackground">#F6F8F3</item>
+    </style>
+</resources>
