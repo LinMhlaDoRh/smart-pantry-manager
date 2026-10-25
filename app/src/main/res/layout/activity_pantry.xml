@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screen" style="@style/Screen">
+    <TextView style="@style/Heading" android:text="@string/pantry_title" />
+    <TextView style="@style/Body" android:text="@string/pantry_subtitle" />
+    <Button android:id="@+id/addIngredient" style="@style/PrimaryButton" android:text="@string/add_ingredient" />
+    <TextView android:id="@+id/pantryCount" style="@style/Body" android:layout_marginBottom="12dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/pantryList"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:clipToPadding="false" android:paddingBottom="8dp" />
+    <TextView android:id="@+id/emptyPantry" style="@style/Body"
+        android:layout_height="0dp" android:layout_weight="1" android:gravity="center"
+        android:padding="24dp" android:text="@string/pantry_empty" android:visibility="gone" />
+    <include layout="@layout/navigation" />
+</LinearLayout>

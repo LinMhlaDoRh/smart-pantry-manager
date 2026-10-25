@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screen" style="@style/Screen">
+    <TextView style="@style/Heading" android:text="@string/settings_title" />
+    <TextView style="@style/Body" android:text="@string/settings_subtitle" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="16dp">
+            <TextView style="@style/Label" android:text="@string/sort_heading" />
+            <RadioGroup android:id="@+id/sortOrder" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginTop="8dp">
+                <RadioButton android:id="@+id/sortAscending" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="52dp" android:textSize="16sp" android:text="@string/sort_ascending" />
+                <RadioButton android:id="@+id/sortDescending" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="52dp" android:textSize="16sp" android:text="@string/sort_descending" />
+            </RadioGroup>
+            <TextView style="@style/Body" android:text="@string/settings_help" />
+            <TextView style="@style/Label" android:text="@string/storage_heading" />
+            <TextView style="@style/Body" android:text="@string/storage_help" />
+            <TextView style="@style/Label" android:text="@string/matching_heading" />
+            <TextView style="@style/Body" android:text="@string/matching_help" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/navigation" />
+</LinearLayout>

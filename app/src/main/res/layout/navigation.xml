@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginTop="12dp" android:paddingTop="4dp" android:paddingBottom="4dp"
+    android:orientation="horizontal">
+    <Button android:id="@+id/navPantry" style="@style/NavigationButton" android:text="@string/nav_pantry" />
+    <Button android:id="@+id/navRecipes" style="@style/NavigationButton" android:text="@string/nav_recipes" />
+    <Button android:id="@+id/navSettings" style="@style/NavigationButton" android:text="@string/nav_settings" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screen" style="@style/Screen">
+    <Button android:id="@+id/backButton" style="@style/TextButton" android:text="@string/back" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="24dp">
+            <TextView android:id="@+id/formTitle" style="@style/Heading" android:text="@string/add_ingredient" />
+            <TextView style="@style/Body" android:text="@string/form_subtitle" />
+            <TextView style="@style/Label" android:text="@string/ingredient_name" android:labelFor="@id/inputName" />
+            <EditText android:id="@+id/inputName" style="@style/Input" android:hint="@string/name_hint"
+                android:inputType="textCapSentences" android:maxLength="60" android:imeOptions="actionNext" />
+            <TextView style="@style/Label" android:text="@string/quantity" android:labelFor="@id/inputQuantity" />
+            <EditText android:id="@+id/inputQuantity" style="@style/Input" android:hint="@string/quantity_hint"
+                android:inputType="numberDecimal" android:maxLength="20" android:imeOptions="actionDone" />
+            <TextView style="@style/Label" android:text="@string/unit" android:labelFor="@id/inputUnit" />
+            <Spinner android:id="@+id/inputUnit" android:layout_width="match_parent" android:layout_height="56dp"
+                android:entries="@array/units" android:spinnerMode="dropdown" />
+            <TextView style="@style/Body" android:text="@string/unit_help" />
+            <TextView style="@style/Body" android:text="@string/ingredient_help" />
+            <Button android:id="@+id/saveIngredient" style="@style/PrimaryButton" android:text="@string/save_ingredient" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
