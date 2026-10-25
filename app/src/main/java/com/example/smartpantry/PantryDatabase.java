@@ -78,7 +78,7 @@ public class PantryDatabase extends SQLiteOpenHelper {
     private ContentValues valuesFor(Ingredient ingredient) {
         if (ingredient.getName() == null || ingredient.getName().trim().isEmpty()
                 || ingredient.getName().trim().length() > 60
-                || !Double.isFinite(ingredient.getQuantity()) || ingredient.getQuantity() <= 0
+                || Double.isNaN(ingredient.getQuantity()) || Double.isInfinite(ingredient.getQuantity()) || ingredient.getQuantity() <= 0
                 || ingredient.getQuantity() > 1000000000
                 || ingredient.getUnit() == null || RecipeMatcher.unitGroup(ingredient.getUnit()).isEmpty()) {
             throw new IllegalArgumentException("Enter a name, positive quantity and supported unit.");

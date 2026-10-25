@@ -15,6 +15,7 @@ public class RecipeMatcher {
             case "mushrooms": return "mushroom";
             case "peppers": return "pepper";
             case "beans": return "bean";
+            case "cooked beans": return "cooked bean";
             case "bananas": return "banana";
             case "apples": return "apple";
             case "peas": return "pea";
@@ -60,7 +61,7 @@ public class RecipeMatcher {
 
     private static boolean valid(Ingredient ingredient) {
         return ingredient.getName() != null && !ingredient.getName().trim().isEmpty()
-                && Double.isFinite(ingredient.getQuantity()) && ingredient.getQuantity() > 0
+                && !Double.isNaN(ingredient.getQuantity()) && !Double.isInfinite(ingredient.getQuantity()) && ingredient.getQuantity() > 0
                 && ingredient.getUnit() != null && !unitGroup(ingredient.getUnit()).isEmpty();
     }
 

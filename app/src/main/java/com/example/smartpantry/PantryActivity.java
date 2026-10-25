@@ -41,6 +41,7 @@ public class PantryActivity extends BaseActivity implements IngredientAdapter.In
         try {
             ArrayList<Ingredient> ingredients = database.getPantry(preferences.getBoolean("sort_descending", false));
             adapter.setIngredients(ingredients);
+            empty.setText(R.string.pantry_empty);
             count.setText(getResources().getQuantityString(R.plurals.pantry_count, ingredients.size(), ingredients.size()));
             list.setVisibility(ingredients.isEmpty() ? View.GONE : View.VISIBLE);
             empty.setVisibility(ingredients.isEmpty() ? View.VISIBLE : View.GONE);
