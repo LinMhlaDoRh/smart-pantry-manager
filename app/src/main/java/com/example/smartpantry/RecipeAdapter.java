@@ -37,7 +37,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.name.setText(recipe.getName());
-        holder.summary.setText(holder.itemView.getContext().getString(R.string.recipe_ingredients_count, recipe.getIngredients().size()));
+        holder.summary.setText(holder.itemView.getResources().getQuantityString(
+                R.plurals.recipe_ingredients_count, recipe.getIngredients().size(), recipe.getIngredients().size()));
         holder.itemView.setOnClickListener(view -> listener.onSelect(recipe));
     }
 
