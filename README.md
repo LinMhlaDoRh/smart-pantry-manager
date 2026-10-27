@@ -18,8 +18,4 @@ SQLite stores pantry items, recipes and recipe ingredients on the device. It wor
 
 The pantry starts empty. Add banana as 1 pcs and milk as 0.25 l to make Banana milk available. Reducing milk to 0.2 l removes that suggestion.
 
-## Tests
-
-In Android Studio, run RecipeMatcherTest for matching tests and PantryDatabaseTest on an emulator for database tests.
-
-The report and screenshots are in docs. Give the marker access to this private repository before submission.
+Give the marker access to this private repository before submission.

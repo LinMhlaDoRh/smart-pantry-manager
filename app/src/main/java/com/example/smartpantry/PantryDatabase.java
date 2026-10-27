@@ -10,11 +10,7 @@ import java.util.ArrayList;
 
 public class PantryDatabase extends SQLiteOpenHelper {
     public PantryDatabase(Context context) {
-        this(context, "pantry.db");
-    }
-
-    public PantryDatabase(Context context, String name) {
-        super(context, name, null, 1);
+        super(context, "pantry.db", null, 1);
     }
 
     @Override
