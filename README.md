@@ -17,5 +17,3 @@ SQLite stores pantry items, recipes and recipe ingredients on the device. It wor
 5. Select the app configuration and click Run.
 
 The pantry starts empty. Add banana as 1 pcs and milk as 0.25 l to make Banana milk available. Reducing milk to 0.2 l removes that suggestion.
-
-Give the marker access to this private repository before submission.
