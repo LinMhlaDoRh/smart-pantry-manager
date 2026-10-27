@@ -9,15 +9,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 public class PantryDatabase extends SQLiteOpenHelper {
-    private final Context context;
-
     public PantryDatabase(Context context) {
         this(context, "pantry.db");
     }
 
     public PantryDatabase(Context context, String name) {
         super(context, name, null, 1);
-        this.context = context.getApplicationContext();
     }
 
     @Override
@@ -31,6 +28,7 @@ public class PantryDatabase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE pantry (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, quantity REAL NOT NULL CHECK(quantity > 0), unit TEXT NOT NULL)");
         db.execSQL("CREATE TABLE recipes (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, method TEXT NOT NULL)");
         db.execSQL("CREATE TABLE recipe_ingredients (_id INTEGER PRIMARY KEY AUTOINCREMENT, recipe_id INTEGER NOT NULL REFERENCES recipes(_id) ON DELETE CASCADE, name TEXT NOT NULL, quantity REAL NOT NULL CHECK(quantity > 0), unit TEXT NOT NULL)");
+        // Seed only when the database is first created.
         seedRecipes(db);
     }
 
@@ -178,6 +176,7 @@ public class PantryDatabase extends SQLiteOpenHelper {
     }
 
     public boolean updateIngredient(Ingredient ingredient) {
+        // Use the row ID so editing one item cannot change another.
         return getWritableDatabase().update("pantry", valuesFor(ingredient), "_id = ?",
                 new String[]{String.valueOf(ingredient.getId())}) == 1;
     }

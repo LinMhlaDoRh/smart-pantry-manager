@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class RecipeMatcher {
-    public static String normalizeName(String value) {
+    private static String normalizeName(String value) {
         String name = value.trim().toLowerCase(Locale.ROOT).replaceAll("\\s+", " ");
+        // Keep aliases explicit so names such as oats are not shortened incorrectly.
         switch (name) {
             case "tomatoes": return "tomato";
             case "potatoes": return "potato";
@@ -44,7 +45,8 @@ public class RecipeMatcher {
         }
     }
 
-    public static double baseQuantity(Ingredient ingredient) {
+    private static double baseQuantity(Ingredient ingredient) {
+        // Compare mass in grams and volume in millilitres.
         String unit = normalizeUnit(ingredient.getUnit());
         if (unit.equals("kg") || unit.equals("l")) {
             return ingredient.getQuantity() * 1000;
@@ -70,11 +72,9 @@ public class RecipeMatcher {
             return false;
         }
         for (Ingredient required : recipe.getIngredients()) {
-            if (!valid(required)) {
-                return false;
-            }
             double needed = 0;
             double available = 0;
+            // Combine repeated requirements before comparing the available total.
             for (Ingredient ingredient : recipe.getIngredients()) {
                 if (!valid(ingredient)) {
                     return false;
@@ -89,6 +89,7 @@ public class RecipeMatcher {
                 }
             }
             if (available < needed) {
+                // One shortage excludes the entire recipe.
                 return false;
             }
         }

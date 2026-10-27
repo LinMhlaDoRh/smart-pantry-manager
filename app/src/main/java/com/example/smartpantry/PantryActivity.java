@@ -34,6 +34,7 @@ public class PantryActivity extends BaseActivity implements IngredientAdapter.In
     @Override
     protected void onResume() {
         super.onResume();
+        // Apply ingredient changes and sorting when returning to this screen.
         loadPantry();
     }
 

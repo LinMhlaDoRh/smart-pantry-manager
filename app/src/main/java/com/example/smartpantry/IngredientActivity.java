@@ -28,6 +28,7 @@ public class IngredientActivity extends BaseActivity {
         save.setOnClickListener(view -> saveIngredient());
         if (ingredientId != -1) {
             ((TextView) findViewById(R.id.formTitle)).setText(R.string.edit_ingredient);
+            // Let Android restore unsaved input after a rotation.
             if (savedInstanceState == null) {
                 loadIngredient();
             }

@@ -32,6 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         int top = screen.getPaddingTop();
         int right = screen.getPaddingRight();
         int bottom = screen.getPaddingBottom();
+        // Keep controls clear of system bars and the on-screen keyboard.
         ViewCompat.setOnApplyWindowInsetsListener(screen, (view, windowInsets) -> {
             Insets bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
             Insets keyboard = windowInsets.getInsets(WindowInsetsCompat.Type.ime());
